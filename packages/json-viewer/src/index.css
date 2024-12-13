@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  border: none;
+  background-color: transparent;
+  color: #5c5c5c;
+}
+
+li {
+  list-style-type: none;
+}
+
+.viewer {
+  font-size: 12px;
+  font-family: monospace !important;
+  width: 500px;
+
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  max-height: 600px;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+}
+
+.toggleable {
+  width: 100%;
+}
+
+.name {
+  border-radius: 5px;
+  font-size: 12px;
+  color: #5c5c5c;
+}
+
+.properties {
+  padding-left: 20px;
+}
+
+.colon {
+  margin-right: 5px;
+}
+
+.flex {
+  display: flex;
+
+  &.flex-col {
+    flex-direction: column;
+  }
+
+  &.gap {
+    gap: 5px;
+  }
+}
+
+.string {
+  color: #f47f36;
+}
+
+.number {
+  color: #3688f4;
+}
+
+.boolean {
+  color: #05a659;
+}
+
+.null {
+  color: #f43636;
+}
+
+.object-properties {
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    border-right: 1px solid #ccc;
+    left: 0;
+  }
+
+  .object-property {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+    min-height: 20px;
+  }
+}
+
+.array-elements {
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    border-right: 1px solid #ccc;
+    left: 0;
+  }
+
+  .array-element {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+    min-height: 20px;
+  }
+}
+
+.hoverable {
+  --color: 0, 100, 255;
+  width: 100%;
+  border: 1px solid transparent;
+  &:hover:not(:has(.hoverable:hover)) {
+    background-color: rgba(var(--color), 0.1);
+    border-radius: 5px;
+    border: 1px solid rgba(var(--color), 0.4);
+  }
+}
+
+.expandable {
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
